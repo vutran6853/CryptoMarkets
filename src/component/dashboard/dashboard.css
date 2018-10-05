@@ -1,0 +1,13 @@
+.cardBox {
+  border: 1px solid red;
+  height: 400px;
+  width: 400px;
+  display: inline-table;
+  
+  
+}
+
+img {
+  height: 100px;
+  width: 100px;
+}
