@@ -6,7 +6,7 @@ const cors = require('cors');
 const app = express();
 const massive = require('massive');
 
-const { getCryptoname } = require('./cryptoContollers');
+const { getCryptoname, getCryptoImage } = require('./cryptoContollers');
 
 app.use(cors());
 
@@ -22,6 +22,8 @@ massive(process.env.CONNECTION_STRING)
 
 
 app.get('/api/getcryptoname', getCryptoname)
+app.get('/api/getcryptoImage/image', getCryptoImage)
+
 
 
 app.listen(port, () => {

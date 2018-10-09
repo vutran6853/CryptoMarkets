@@ -11,12 +11,12 @@ class NavbarHeader extends Component {
         <button>Home</button>
       </Link>
 
-      <Link to='/new1'>
-        <button>appleNews</button>
+      <Link to='/'>
+        <button>CryproBTC</button>
       </Link>
 
-      <Link to='/new2'>
-        <button>Crypro</button>
+      <Link to='/Crypto/ZEC'>
+        <button>CryptoETH</button>
       </Link>
 
       <Link to='/new3'>

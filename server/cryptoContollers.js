@@ -17,6 +17,24 @@ let getCryptoname = (req, res, next) => {
 
 }
 
+let getCryptoImage = (req, res, next) => {
+
+  const dbInstance = req.app.get('db');
+
+  dbInstance.getCrypto_Image()
+  .then((response) => {
+    // console.log('RESPONSE: ', response)
+    res.status(200).send(response)
+  })
+  .catch((error) => {
+    res.status(500).send('Oop, Something have Happen unable to complete this request')
+    // console.log(error);
+  })
+
+
+}
+
 module.exports = {
-  getCryptoname
+  getCryptoname,
+  getCryptoImage
 }
