@@ -93,8 +93,6 @@ class Dashboard extends Component {
           <Table size="sm" hover bordered >
             <CryptoTableHeader/>
               { displayCrypto }
-           
-      
 
         </Table>
         

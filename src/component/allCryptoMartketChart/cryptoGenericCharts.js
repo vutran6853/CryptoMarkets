@@ -18,7 +18,7 @@ class CryproBTC extends Component {
         },
         yAxis: {
           title: {
-            text: 'Temperature (°C)'
+            text: 'Price $'
           }
         },
         title: {
@@ -39,7 +39,7 @@ class CryproBTC extends Component {
         },
         yAxis: {
           title: {
-            text: 'Temperature (°C)'
+            text: 'USD $'
           }
         },
         title: {

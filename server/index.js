@@ -20,11 +20,8 @@ massive(process.env.CONNECTION_STRING)
 })
 .catch(error => console.log('DANGER! : ', error));
 
-
 app.get('/api/getcryptoname', getCryptoname)
 app.get('/api/getcryptoImage/image', getCryptoImage)
-
-
 
 app.listen(port, () => {
   console.log(`Server is UP and listening on port ${port}`);

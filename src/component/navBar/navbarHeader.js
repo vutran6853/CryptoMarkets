@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import css from './header.css';
 import { Link } from 'react-router-dom';
+import { Button } from 'reactstrap';
 
 class NavbarHeader extends Component {
   render() { 
@@ -8,10 +9,10 @@ class NavbarHeader extends Component {
       <div className='navBarheader' >
         
       <Link to='/' >
-        <button>Home</button>
+        <Button className='btn-info' >Home</Button>
       </Link>
 
-      <Link to='/'>
+      {/* <Link to='/'>
         <button>CryproBTC</button>
       </Link>
 
@@ -21,7 +22,7 @@ class NavbarHeader extends Component {
 
       <Link to='/new3'>
         <button>WallStreet</button>
-      </Link>
+      </Link> */}
 
       </div>
      );
