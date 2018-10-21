@@ -3,7 +3,6 @@ import NavbarHeader from '../navBar/navbarHeader';
 import axios from 'axios';
 const moment = require('moment');
 
-
 let ReactHighcharts = require('react-highcharts');
 
 class CryproBTC extends Component {
@@ -71,8 +70,6 @@ class CryproBTC extends Component {
     })
   }
 
- 
-
   render() {
     let { historyBTCData } = this.state;
     let { categories } = this.state.config.xAxis
@@ -91,7 +88,6 @@ class CryproBTC extends Component {
       <div>
         <NavbarHeader/>
           <ReactHighcharts config={this.state.config} />
-          
       </div>
      );
   }

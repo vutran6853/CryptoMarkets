@@ -5,8 +5,6 @@ class CryptoTableHeader extends Component {
   state = {  }
   render() { 
     return ( 
-     
-      
           <thead>
             <tr>
               <th>#</th>
@@ -18,8 +16,6 @@ class CryptoTableHeader extends Component {
               <th>7d</th>
             </tr>
           </thead>
-  
-
      );
   }
 }

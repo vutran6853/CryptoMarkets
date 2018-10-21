@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import NavbarHeader from '../navBar/navbarHeader';
 import axios from 'axios';
 import css from './dashboard.css'
-// import Cryptogeneric from '../allCryptoMartketChart/cryptoGenericCharts';
 import CryptoTableHeader from './cryptoTableheader';
 import { Link } from 'react-router-dom'
 import { Table } from 'reactstrap';
@@ -36,7 +35,6 @@ class Dashboard extends Component {
       // console.log(response.data)
       this.setState({ imageData: response.data})
     })
-
   }
 
   componentDidUpdate(prevprop, prevState) {
@@ -49,15 +47,10 @@ class Dashboard extends Component {
     // console.log(imageList);
   }
 
-
   render() { 
     let { allCryptoData } = this.state
     let multlayerCrypto = _.map(allCryptoData)
     // console.log(this.state.imageData)
-   
-    
-
-
 
     let displayCrypto = multlayerCrypto.map((value, index) => {
       // console.log('VALUE:', value, 'INDEX: ', index)
@@ -65,7 +58,6 @@ class Dashboard extends Component {
       console.log(imageList1)
       coinName.push(value.symbol)
       return(
-      
           <tbody>
             <tr>
               <td>{ index + 1 }</td>
@@ -82,10 +74,8 @@ class Dashboard extends Component {
               <td>{ value.quotes.USD.percent_change_7d } %</td>
             </tr>
           </tbody>
-    
       )
     })
-
 
     return ( 
       <div>
@@ -93,9 +83,7 @@ class Dashboard extends Component {
           <Table size="sm" hover bordered >
             <CryptoTableHeader/>
               { displayCrypto }
-
         </Table>
-        
       </div>
      );
   }

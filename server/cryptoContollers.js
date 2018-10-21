@@ -18,7 +18,7 @@ let getCryptoname = (req, res, next) => {
 }
 
 let getCryptoImage = (req, res, next) => {
-
+  
   const dbInstance = req.app.get('db');
 
   dbInstance.getCrypto_Image()
@@ -30,7 +30,6 @@ let getCryptoImage = (req, res, next) => {
     res.status(500).send('Oop, Something have Happen unable to complete this request')
     // console.log(error);
   })
-
 
 }
 
