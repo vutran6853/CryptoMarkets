@@ -12,7 +12,7 @@ app.use(cors());
 
 app.use(json());
 
-// Massive connent to SQL system functionaluty
+//Massive connent to SQL system functionaluty
 massive(process.env.CONNECTION_STRING)
 .then(dbInstace => {
   //  console.log('Copy of dbInstace', dbInstace )

@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import NavbarHeader from '../navBar/navbarHeader';
 import axios from 'axios';
-import css from './dashboard.css'
+import './dashboard.css';
 import CryptoTableHeader from './cryptoTableheader';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import { Table } from 'reactstrap';
-let _ = require('lodash');
+
+let lodash = require('lodash');
 let coinName = []
 let imageList = []
 
@@ -23,47 +24,37 @@ class Dashboard extends Component {
   }
 
   componentDidMount() {   
-    let { name } = this.state
     axios.get(`https://api.coinmarketcap.com/v2/ticker/`)
-    .then((response) => {
-      // console.log(response.data.data)
-      this.setState({ allCryptoData: response.data.data })
-    });
-    
+    .then((response) => this.setState({ allCryptoData: response.data.data }))
+    .catch((error) => console.log(`Danger Front End ${ error }`));
+
     axios.get('/api/getcryptoImage/image')
-    .then((response) => {
-      // console.log(response.data)
-      this.setState({ imageData: response.data})
-    })
+    .then((response) => this.setState({ imageData: response.data}))
+    .catch((error) => console.log(`Danger Front End ${ error }`))
   }
 
   componentDidUpdate(prevprop, prevState) {
     let oldList = this.state.imageData
     
     for(let i = 0; i < oldList.length; i++) {
-      // console.log(oldList[i].bitcoinimage_url)
       imageList.push(oldList[i].bitcoinimage_url)
     }
-    // console.log(imageList);
   }
 
   render() { 
     let { allCryptoData } = this.state
-    let multlayerCrypto = _.map(allCryptoData)
-    // console.log(this.state.imageData)
+    let multlayerCrypto = lodash.map(allCryptoData)
 
     let displayCrypto = multlayerCrypto.map((value, index) => {
-      // console.log('VALUE:', value, 'INDEX: ', index)
       let imageList1 = imageList
-      console.log(imageList1)
       coinName.push(value.symbol)
       return(
           <tbody>
             <tr>
               <td>{ index + 1 }</td>
               <td>
-                <img src={ imageList1[index] }></img>
-                <Link to={`/api/Crypto/${ value.symbol }`}> 
+                <img src={ imageList1[index] } alt={ value.symbol }></img>
+                <Link to={ `/api/Crypto/${ value.symbol }` }> 
                     { value.name }
                 </Link>
               </td>
